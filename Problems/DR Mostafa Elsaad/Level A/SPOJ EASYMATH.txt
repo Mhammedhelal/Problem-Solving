@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t,n,m,a,d;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m>>a>>d;
+        int a1=a+d;
+        int a2=a+2*d;
+        int a3=a+3*d;
+        int a4=a+4*d;
+
+        int res = 0;
+        for(int i=0;i<2;i++)
+        {
+            for(int j=0;j<2;j++)
+            {
+                for(int k=0;k<2;k++)
+                {
+                    for(int l=0;l<2;l++)
+                    {
+                        for(int m=0;m<2;m++)
+                        {
+                            int d=1,elementCnt=0;
+
+                            if(i) d*=a, elementCnt++;
+                            if(j) d*=a1, elementCnt++;
+                            if(k) d*=a2, elementCnt++;
+                            if(l) d*=a3, elementCnt++;
+                            if(m) d*=a4, elementCnt++;
+
+                            if(elementCnt==0) continue;
+                            int sign = elementCnt%2==0? -1:1;
+                            res += sign * (m/d-((n-1)/d));
+                        }
+                    }
+                }
+            }
+        }
+
+
+        res = m-n+1 - res;
+        cout<<res<<"\n";
+    }
+
+    return 0;
+}
