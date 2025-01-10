@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Courses/CS Courses/Problem Solving/Problem-Solving/Problems/ICPC Asyut Sheets/Sheet #9 (General medium)",
-      "program": "d:/Courses/CS Courses/Problem Solving/Problem-Solving/Problems/ICPC Asyut Sheets/Sheet #9 (General medium)/build/Debug/outDebug",
+      "cwd": "d:/Courses/CS Courses/Problem Solving/Problem-Solving/Problems/ICPC Asyut Sheets/Sheet #10 (General Hard)",
+      "program": "d:/Courses/CS Courses/Problem Solving/Problem-Solving/Problems/ICPC Asyut Sheets/Sheet #10 (General Hard)/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

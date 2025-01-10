@@ -408,7 +408,40 @@ ListNode *oddEvenList(ListNode *head)
 
     return head;
 }
+ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
+{
+    if (!list1)
+        return list2;
+    if (!list2)
+        return list1;
+    ListNode *ptr, *another, *temp;
+    bool flag = true;
+    if (list1->val > list2->val)
+    {
+        ptr = list2;
+        another = list1;
+        flag = false;
+    }
+    else
+    {
+        ptr = list1;
+        another = list2;
+    }
 
+    while (ptr->next)
+    {
+        if (ptr->next->val > another->val)
+        {
+            temp = ptr->next;
+            ptr->next = another;
+            another = temp;
+        }
+        ptr = ptr->next;
+    }
+    ptr->next = another;
+
+    return flag ? list1 : list2;
+}
 ListNode *add_next(ListNode *head, int val)
 {
     ListNode *temp = new ListNode();
@@ -418,6 +451,38 @@ ListNode *add_next(ListNode *head, int val)
     head->next = temp;
 
     return temp;
+}
+ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+{
+    ListNode dummy(0);          // Dummy node to simplify handling the head of the result list
+    ListNode *sumList = &dummy; // Pointer to the current node in the result list
+    int carry = 0;              // To store carry from addition
+
+    // Loop until both lists are exhausted and no carry remains
+    while (l1 || l2 || carry)
+    {
+        int sum = carry; // Start with carry from the previous operation
+
+        if (l1)
+        {
+            sum += l1->val;
+            l1 = l1->next; // Move to the next node in l1
+        }
+        if (l2)
+        {
+            sum += l2->val;
+            l2 = l2->next; // Move to the next node in l2
+        }
+
+        // Create a new node for the current digit of the sum
+        sumList->next = new ListNode(sum % 10);
+        sumList = sumList->next; // Move to the next node in the result list
+
+        // Update carry for the next iteration
+        carry = sum / 10;
+    }
+
+    return dummy.next; // Return the next node of dummy as the head of the result list
 }
 void print_data(ListNode *head) // O(n)
 {
