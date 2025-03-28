@@ -10,7 +10,7 @@ int main()
     while(n>>=1){
         log++;
     }
-    cout<<log;
+    cout<<log<<endl;
 
     return 0;
 }
