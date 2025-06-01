@@ -1,0 +1,7 @@
+a, b = map(float, input().split())
+floor = int(a / b)
+ceil = int((a + b - 1) / b)
+round_val = int((a + b / 2) / b)
+print(f"floor {int(a)} / {int(b)} = {floor}")
+print(f"ceil {int(a)} / {int(b)} = {ceil}")
+print(f"round {int(a)} / {int(b)} = {round_val}")
